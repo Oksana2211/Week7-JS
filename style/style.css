@@ -1,0 +1,28 @@
+.root {
+  font-size: 1.6rem;
+}
+.block-tasks{
+  background-color: rgb(255, 241, 224);
+  max-width: 50vw;
+}
+.block-tasks__h3{
+font-size: 1.5rem;
+}
+.block-tasks__input {
+  width: 50%;
+}
+.block-tasks__сonclusion {
+  background: transparent;
+  border: none;
+  width: 50%;
+}
+.block-tasks__inputBtn{
+  background-color: rgb(156, 127, 92);
+  color: rgb(255, 255, 255);
+  border-color: rgb(156, 127, 92);
+}
+.block-tasks__cleaningBtn {
+  background-color: rgb(156, 127, 92);
+  color: rgb(255, 255, 255);
+  border-color: rgb(156, 127, 92);
+}
