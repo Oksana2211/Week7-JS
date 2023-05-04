@@ -29,6 +29,8 @@ font-size: 1.5rem;
   background-color: rgb(255, 241, 224);
   border: none;
   text-align: center;
+  color: #888;
+  
 }
 ul li {
   cursor: pointer;

@@ -23,12 +23,17 @@ blockTasksHeader2.textContent = "Список задач";
 blockTasks.appendChild(blockTasksHeader2);//добавляем заголовок2 в основном блок (section)
 
 
+
+
 const сonclusion = document.createElement('div'); //создаем поле для вывода
 сonclusion.className = 'block-tasks__сonclusion';
-сonclusion.innerHTML += '<input class="no-tasks" placeholder="Нет задач" disabled></input>';
 blockTasks.appendChild(сonclusion);//добавляем поле в основном блок (section)
 
 
+const inputNoTasks = document.createElement('span');// "Нет задач"
+inputNoTasks.className = 'no-tasks';
+inputNoTasks.textContent = "Нет задач";
+сonclusion.appendChild(inputNoTasks);
 
 
 const cleaningBtn = document.createElement('button');//создаем кнопку для добавления задач
@@ -39,6 +44,7 @@ blockTasks.appendChild(cleaningBtn);//добавляем кнопку в осн�
 
 inputBtn.addEventListener('click', function addTask() {
 
+  inputNoTasks.remove();//удаляем "Нет задач"
 
   const taskList = document.createElement('ul');//контейнер для задач
   сonclusion.appendChild(taskList);//добавляем контейнер для задач в div
@@ -59,20 +65,25 @@ inputBtn.addEventListener('click', function addTask() {
       div.style.display = "none";
     }
   }
+
   //при клике на задачу добавляем класс
   taskList.addEventListener('click', function (ev) {
     if (ev.target.tagName === 'LI') {
       ev.target.classList.toggle('checked');
     }
   }, false);
+
 })
 
 
 
 
-
 cleaningBtn.addEventListener('click', function cleanTaskList() {
-  let li = document.querySelectorAll("li");
-  console.log(li);
+  сonclusion.textContent = "";
+
+  const inputNoTasks = document.createElement('span');//добавляем "Нет задач"
+  inputNoTasks.className = 'no-tasks';
+  inputNoTasks.textContent = "Нет задач";
+  сonclusion.appendChild(inputNoTasks);
 
 })
