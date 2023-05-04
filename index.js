@@ -39,12 +39,29 @@ blockTasks.appendChild(cleaningBtn);//добавляем кнопку в осн�
 
 
 inputBtn.addEventListener('click', function addTask () {
+
 //создаем строку с задачей и добовляем ее в контейнер для задач
   const node = document.createElement("li");
-  const textnode = document.createTextNode(`${input.value}`);
+  node.innerHTML += `${input.value}`+'<span class="close">\u00D7</span>';
   input.value = '';
-  node.appendChild(textnode);
   taskList.appendChild(node);
 
+//делаем активным крестик у элемента
+const close = document.getElementsByClassName("close");
+for (let i = 0; i < close.length; i++) {
+close[i].onclick = function() {
+const div = this.parentElement;
+ div.style.display = "none";
+}
+}
 })
+
+
+//при клике на задачу добавляем класс
+taskList.addEventListener('click', function(ev) {
+if (ev.target.tagName === 'LI') {
+  ev.target.classList.toggle('checked');
+  }
+}, false);
+
 
