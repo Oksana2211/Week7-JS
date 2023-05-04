@@ -25,9 +25,9 @@ blockTasks.appendChild(blockTasksHeader2);//добавляем заголово�
 
 const сonclusion = document.createElement('div'); //создаем поле для вывода
 сonclusion.className = 'block-tasks__сonclusion';
+сonclusion.innerHTML += '<input class="no-tasks" placeholder="Нет задач" disabled></input>';
 blockTasks.appendChild(сonclusion);//добавляем поле в основном блок (section)
-const taskList = document.createElement('ul');//контейнер для задач
-сonclusion.appendChild(taskList);//добавляем контейнер для задач в div
+
 
 
 
@@ -37,43 +37,42 @@ cleaningBtn.textContent = "Очистить список задач";
 blockTasks.appendChild(cleaningBtn);//добавляем кнопку в основном блок (section)
 
 
-
-if (taskList.innerHTML === "") {taskList.innerHTML += '<input class="no-tasks" placeholder="Нет задач" disabled></input>'}
-
-inputBtn.addEventListener('click', function addTask () {
-
-// document.getElementsByClassName("no-tasks").remove();
-
-//создаем строку с задачей и добовляем ее в контейнер для задач
-const node = document.createElement("li");
-node.innerHTML += `${input.value}`+'<span class="close">\u00D7</span>';
-input.value = '';
-taskList.appendChild(node);
+inputBtn.addEventListener('click', function addTask() {
 
 
-
-if (node.innerHTML === 'LI') {
-const inputNo = document.getElementsByClassName("no-tasks");
-inputNo.style.display = "none";
-}
+  const taskList = document.createElement('ul');//контейнер для задач
+  сonclusion.appendChild(taskList);//добавляем контейнер для задач в div
+  const node = document.createElement("li");
 
 
-//делаем активным крестик у элемента
-const close = document.getElementsByClassName("close");
-for (let i = 0; i < close.length; i++) {
-close[i].onclick = function() {
-const div = this.parentElement;
-div.style.display = "none";
-}
-}
+  //создаем строку с задачей и добовляем ее в контейнер для задач
+  node.innerHTML += `${input.value}` + '<span class="close">\u00D7</span>';
+  input.value = '';
+  taskList.appendChild(node);
+
+
+  //делаем активным крестик у элемента
+  const close = document.getElementsByClassName("close");
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      const div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+  //при клике на задачу добавляем класс
+  taskList.addEventListener('click', function (ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
 })
 
-// 
-//при клике на задачу добавляем класс
-taskList.addEventListener('click', function(ev) {
-if (ev.target.tagName === 'LI') {
-  ev.target.classList.toggle('checked');
-  }
-}, false);
 
 
+
+
+cleaningBtn.addEventListener('click', function cleanTaskList() {
+  let li = document.querySelectorAll("li");
+  console.log(li);
+
+})
