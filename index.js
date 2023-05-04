@@ -35,9 +35,7 @@ blockTasks.appendChild(cleaningBtn);//добавляем кнопку в осн�
 
 
 inputBtn.addEventListener('click', function addTask () {
-let task = input.value;//введеную задачу записываем в переменную 
-сonclusion.value = task;//и выводим
-let tasks = [];
+
 
 
 })
@@ -45,9 +43,3 @@ let tasks = [];
 
 
 
-
-
-
-
-
-console.log();
