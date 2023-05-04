@@ -25,6 +25,11 @@ font-size: 1.5rem;
   color: rgb(255, 255, 255);
   border-color: rgb(156, 127, 92);
 }
+.no-tasks {
+  background-color: rgb(255, 241, 224);
+  border: none;
+  text-align: center;
+}
 ul li {
   cursor: pointer;
   position: relative;
@@ -55,6 +60,6 @@ ul li.checked {
   background-color: #f44336;
   color: white;
 }
-.closeLi {
+.closeInput {
   display: none;
 }
