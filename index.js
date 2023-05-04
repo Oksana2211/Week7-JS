@@ -80,10 +80,5 @@ inputBtn.addEventListener('click', function addTask() {
 
 cleaningBtn.addEventListener('click', function cleanTaskList() {
   сonclusion.textContent = "";
-
-  const inputNoTasks = document.createElement('span');//добавляем "Нет задач"
-  inputNoTasks.className = 'no-tasks';
-  inputNoTasks.textContent = "Нет задач";
   сonclusion.appendChild(inputNoTasks);
-
 })
