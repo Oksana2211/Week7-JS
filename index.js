@@ -68,7 +68,7 @@ inputBtn.addEventListener('click', function addTask() {
 
   // если поле для ввода пустое выводим "Новая задача" в LI-контейнер
   if (input.value == '' || input.value == ' ') {
-    node.innerHTML += `<img class="icon" src="${randomImage[imgIndex]}" alt="иконка кактус"> Новая задача  <span class="close">\u00D7</span>`;
+    input.value = "Новая задача";
   }
 
 
