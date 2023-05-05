@@ -65,3 +65,7 @@ ul li.checked {
 .closeInput {
   display: none;
 }
+.btn:disabled {
+background-color: #ddd;
+cursor: not-allowed;
+}
