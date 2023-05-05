@@ -58,11 +58,11 @@ inputBtn.addEventListener('click', function addTask() {
 
 
   let randomImage = new Array();//массив с иконками
-  randomImage[0] = "/img/icon.png";
-  randomImage[1] = "/img/icon1.png";
-  randomImage[2] = "/img/icon2.png";
-  randomImage[3] = "/img/icon3.png";
-  randomImage[4] = "/img/icon4.png";
+  randomImage[0] = "img/icon.png";
+  randomImage[1] = "img/icon1.png";
+  randomImage[2] = "img/icon2.png";
+  randomImage[3] = "img/icon3.png";
+  randomImage[4] = "img/icon4.png";
   let imgIndex = Math.floor(Math.random() * randomImage.length);//находим рандомную иконку (в дальнейшем выводим с задачей)
 
 
