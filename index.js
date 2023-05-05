@@ -52,7 +52,6 @@ inputBtn.addEventListener('click', function addTask() {
   cleaningBtn.classList.add('block-tasks__cleaningBtn');// стилизуем активную кнопку
 
 
-
   const taskList = document.createElement('ul');//контейнер для задач
   сonclusion.appendChild(taskList);//добавляем контейнер для задач в div
   const node = document.createElement("li");//контейнер для записи каждой задачи
