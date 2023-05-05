@@ -3,8 +3,11 @@
   margin-left: 17%;
   margin-right: 17%;
 }
+.icon1{
+  width: 2.5vw;
+}
 .icon{
-  width: 3vw;
+  width: 1.7vw;
 }
 .block-tasks{
   margin-top: 5%;
@@ -62,6 +65,7 @@ ul {
   padding-left: 0;
 }
 ul li {
+  max-height: 2vw;
   cursor: pointer;
   position: relative;
   padding: 2%;
@@ -86,6 +90,7 @@ ul li.checked {
   top: 0;
   bottom: 0;
   padding: 2.5%;
+  font-size: 1.9rem;
 }
 .close:hover {
   background-color:rgba(7,69,36,0.75);

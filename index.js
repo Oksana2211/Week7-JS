@@ -57,14 +57,23 @@ inputBtn.addEventListener('click', function addTask() {
   const node = document.createElement("li");//контейнер для записи каждой задачи
 
 
+  let randomImage = new Array();//массив с иконками
+  randomImage[0] = "/img/icon.png";
+  randomImage[1] = "/img/icon1.png";
+  randomImage[2] = "/img/icon2.png";
+  randomImage[3] = "/img/icon3.png";
+  randomImage[4] = "/img/icon4.png";
+  let imgIndex = Math.floor(Math.random() * randomImage.length);//находим рандомную иконку (в дальнейшем выводим с задачей)
+
+
   // если поле для ввода пустое выводим "Новая задача" в LI-контейнер
   if (input.value == '' || input.value == ' ') {
-    node.innerHTML += "Новая задача" + '<span class="close">\u00D7</span>';
+    node.innerHTML += `<img class="icon" src="${randomImage[imgIndex]}" alt="иконка кактус"> Новая задача  <span class="close">\u00D7</span>`;
   }
 
 
   //создаем строку с задачей и добовляем ее в контейнер для задач
-  node.innerHTML += `${input.value}` + '<span class="close">\u00D7</span>';
+  node.innerHTML += `<img class="icon" src="${randomImage[imgIndex]}" alt="иконка кактус"> ${input.value} <span class="close">\u00D7</span>`;
   input.value = '';
   taskList.appendChild(node);//добавляем задачу в LI-контейнер}
 
