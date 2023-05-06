@@ -43,8 +43,7 @@ inputNoTasks.textContent = "Нет задач";
 
 
 // функция при нажатии на кнопку "Добавить"
-inputBtn.addEventListener('click', function addTask() {
-
+function addTask() {
 
   inputNoTasks.remove();//удаляем "Нет задач"
   cleaningBtn.removeAttribute('disabled'); //кнопка "очистить список задач" активна
@@ -93,16 +92,18 @@ inputBtn.addEventListener('click', function addTask() {
       ev.target.classList.toggle('checked');
     }
   }, false);
+}
 
-})
+inputBtn.addEventListener('click', addTask);
 
 // функция при нажатии на кнопку "очистить список задач"
-cleaningBtn.addEventListener('click', function cleanTaskList() {
+function cleanTaskList() {
   сonclusion.textContent = ""; //очищаем div-контейнер от задач
   сonclusion.appendChild(inputNoTasks);// "Нет задач" добавляем надпись в div
   cleaningBtn.setAttribute('disabled', true);//кнопка "очистить список задач" не активна
   cleaningBtn.className = 'btn btn:disabled';//стилизуем неактивную кнопку
-})
+}
+cleaningBtn.addEventListener('click', cleanTaskList);
 
 
 
@@ -135,7 +136,8 @@ divNamb.appendChild(span2);
 divNamb.appendChild(span3);
 divNamb.appendChild(span4);
 
-btn.addEventListener('click', function namberN() {
+
+function namberN() {
 
   const namb = inputNamb.value;//записываем число в переменную
   inputNamb.value = "";
@@ -152,12 +154,6 @@ btn.addEventListener('click', function namberN() {
   span3.textContent = `Сумма цифр в числе: ${sum}`;//выводим сумму 
 
   span4.textContent = `Oбратный порядок цифр: ${nambers.reverse().join(" ")}`
+}
 
-})
-
-// const element = document.querySelector('button')
-
-// function handleClickFunction(event) {
-//   alert('Именованная функция')
-// }
-// element.addEventListener('click', handleClickFunction)
+btn.addEventListener('click', namberN);
