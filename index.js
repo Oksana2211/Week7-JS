@@ -96,7 +96,6 @@ inputBtn.addEventListener('click', function addTask() {
 
 })
 
-
 // функция при нажатии на кнопку "очистить список задач"
 cleaningBtn.addEventListener('click', function cleanTaskList() {
   сonclusion.textContent = ""; //очищаем div-контейнер от задач
@@ -105,26 +104,33 @@ cleaningBtn.addEventListener('click', function cleanTaskList() {
   cleaningBtn.className = 'btn btn:disabled';//стилизуем неактивную кнопку
 })
 
+
+
 //*** Задание под звездочкой
+
 const sectionNamb = document.querySelector('.block-namber')//находим основной блок (section)
 sectionNamb.className = 'sectionNamb';
-const inputNamb = document.createElement("input");
+
+const heading = document.createElement('H3');//создаем заголовок
+heading.textContent = "Напишите число";
+sectionNamb.appendChild(heading);//добавляем его в section
+
+const inputNamb = document.createElement("input");//создаем поле для ввода
 sectionNamb.appendChild(inputNamb);//добавляем в основной блок поле для ввода числа 
 
 const btn = document.createElement('button');//создаем кнопку 
-btn.className = '';
 btn.textContent = "+";
 sectionNamb.appendChild(btn);//добавляем кнопку в основном блок (section)
 
-const divNamb = document.createElement('div')//создаем поле для вывода
+const divNamb = document.createElement('div')//создаем поле для вывода div
 divNamb.className = 'divNamb';
 sectionNamb.appendChild(divNamb);//добавляем его в основном блок (section)
 
-const span1 = document.createElement('span');
+const span1 = document.createElement('span');//создаем поля для вывода
 const span2 = document.createElement('span');
 const span3 = document.createElement('span');
 const span4 = document.createElement('span');
-divNamb.appendChild(span1);
+divNamb.appendChild(span1);//добавляем их в div
 divNamb.appendChild(span2);
 divNamb.appendChild(span3);
 divNamb.appendChild(span4);
@@ -136,21 +142,22 @@ btn.addEventListener('click', function namberN() {
   span1.textContent = `Вы ввели число: ${namb}`; //выводим число
   span2.textContent = `Цифр в числе: ${namb.length}`;//выводим количество цифр в числе
 
-  let nambers = namb.split("");//разбиваем число на массив из цифр
+  let nambers = namb.split("").map(i => Number(i));//разбиваем число на массив из цифр
 
-
-  function sum(nambers) {
-    let s = 0;
-    for (i = 0; i < nambers.length; i++) {
-      s += nambers[i]
-    }
-    return s
+  let sum = 0;
+  for (let i in nambers) {
+    sum += nambers[i];
   }
 
+  span3.textContent = `Сумма цифр в числе: ${sum}`;//выводим сумму 
 
-  // span3.textContent = `Цифры: ${nambers.join(" ")}`;//выводим 
-
-  // const nambersR = nambers.reverse();
-  // span4.textContent = `Oбратный порядок цифр: ${nambersR.join(" ")}`
+  span4.textContent = `Oбратный порядок цифр: ${nambers.reverse().join(" ")}`
 
 })
+
+// const element = document.querySelector('button')
+
+// function handleClickFunction(event) {
+//   alert('Именованная функция')
+// }
+// element.addEventListener('click', handleClickFunction)
