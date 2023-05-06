@@ -99,3 +99,11 @@ ul li.checked {
 .closeInput {
   display: none;
 }
+.sectionNamb {
+  min-height: 5vw;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.divNamb{
+  display: grid;
+}
