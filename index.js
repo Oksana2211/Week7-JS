@@ -54,6 +54,7 @@ function addTask() {
   const node = document.createElement("li");//контейнер для записи каждой задачи
 
 
+
   let randomImage = new Array();//массив с иконками
   randomImage[0] = "img/icon.png";
   randomImage[1] = "img/icon1.png";
@@ -80,7 +81,7 @@ function addTask() {
   for (let i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       const div = this.parentElement;
-      div.style.display = "none";
+      div.remove();
     }
   }
 
