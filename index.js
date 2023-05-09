@@ -28,8 +28,7 @@ const сonclusion = document.createElement('div'); //создаем поле д�
 blockTasks.appendChild(сonclusion);//добавляем поле в основном блок (section)
 
 const cleaningBtn = document.createElement('button');//создаем кнопку для удаления задач
-
-cleaningBtn.className = 'closeInput btn block-tasks__cleaningBtn';
+cleaningBtn.className = 'btn block-tasks__cleaningBtn';
 cleaningBtn.textContent = "Очистить список задач";
 blockTasks.appendChild(cleaningBtn);//добавляем кнопку в основном блок (section)
 
@@ -46,8 +45,7 @@ inputNoTasks.textContent = "Нет задач";
 function addTask() {
 
   inputNoTasks.remove();//удаляем "Нет задач"
-  cleaningBtn.removeAttribute('disabled'); //кнопка "очистить список задач" активна
-  cleaningBtn.classList.remove('closeInput'); //удаляем класс с display: none;
+  cleaningBtn.disabled = false;//кнопка "Очистить список задач "активна
   cleaningBtn.classList.add('block-tasks__cleaningBtn');// стилизуем активную кнопку
 
 
@@ -100,8 +98,7 @@ inputBtn.addEventListener('click', addTask);
 function cleanTaskList() {
   сonclusion.textContent = ""; //очищаем div-контейнер от задач
   сonclusion.appendChild(inputNoTasks);// "Нет задач" добавляем надпись в div
-  cleaningBtn.setAttribute('disabled', true);//кнопка "очистить список задач" не активна
-  cleaningBtn.className = 'btn btn:disabled';//стилизуем неактивную кнопку
+  cleaningBtn.disabled = true;//кнопка "очистить список задач" не активна
 }
 cleaningBtn.addEventListener('click', cleanTaskList);
 
